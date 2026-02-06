@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-67XDYXYKQJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-67XDYXYKQJ');
+    </script>
+    <link href="https://fonts.loli.net/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zihan (Nick) Su</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+
+<style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 1rem; /* 16px */
+      max-width: 900px;
+      margin: auto;
+      padding: 2.5rem 1.25rem;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+    }
+    
+    h1, h2 {
+      color: #333;
+    }
+    
+    h1 {
+      font-size: 2rem; /* 32px */
+      text-align: center;
+      margin-bottom: 0.625rem;
+    }
+    
+    h2 {
+      font-size: 1.25rem; /* 20px */
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 0.3125rem;
+      margin-top: 1.875rem;
+    }
+    
+    .contact, .section {
+      margin-top: 0.625rem;
+      font-size: 1rem; 
+    }
+    
+    .item {
+      margin-top: 0.9375rem;
+      background: #fff;
+      padding: 0.9375rem;
+      border-left: 4px solid #4a90e2;
+      box-shadow: 0 0.125rem 0.3125rem rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    
+    .item-content {
+      flex: 1;
+      padding-right: 0.625rem;
+    }
+    
+    .item img.logo {
+      width: 3.75rem;
+      height: 3.75rem;
+      object-fit: contain;
+      margin-left: 0.9375rem;
+    }
+    
+    .date-tag {
+      background: transparent;
+      color: #888;
+      font-style: italic;
+      padding: 0;
+      font-size: 0.8125rem;
+    }
+    
+    .bold {
+      font-weight: 600;
+    }
+    
+    .italic {
+      font-style: italic;
+    }
+    
+    .link {
+      color: #555;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    
+    .link:hover {
+      color: #e74c3c;
+    }
+    
+    ul {
+      padding-left: 1.25rem;
+      margin-top: 0.625rem;
+      margin-bottom: 0.625rem;
+      list-style-type: '• ';
+    }
+    
+    ul li {
+      margin-bottom: 0.375rem;
+      padding-left: 0.25rem;
+    }
+    
+    
+    .header-container {
+      text-align: center;
+      background-color: #eef3fb;
+      padding: 1.875rem 1.25rem;
+      border-radius: 0.75rem;
+    }
+    
+    .avatar {
+      width: 7.5rem;
+      height: 7.5rem;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 0.625rem;
+      border: 2px solid #ccc;
+    }
+    
+    .meta-info {
+      color: #666;
+      font-size: 1rem; 
+      font-style: italic;
+      margin-top: 0.125rem;
+    }
+    
+    .highlight {
+      font-weight: 600;
+      color: #2a4d9b;
+    }
+    
+    .quote-minimal {
+      font-style: italic;
+      color: #444;
+      text-align: center;
+      font-size: 1rem; 
+      margin: 0.75rem 0 0;
+    }
+    
+    .misc-item {
+      margin-top: 0.5rem;
+      font-size: 1rem; 
+    }
+    
+    .award-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-top: 0.625rem;
+      flex-wrap: wrap;
+    }
+    
+    .award-left {
+      font-size: 1rem; 
+      font-weight: normal;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 0.1875rem;
+    }
+    
+    .award-right {
+      font-size: 1rem; 
+      font-style: italic;
+      color: #777;
+      white-space: nowrap;
+      margin-left: 0.5rem;
+    }
+    
+    .experience-block {
+      margin-top: 1.25rem;
+      padding: 0;
+      border: none;
+      background: none;
+      box-shadow: none;
+    }
+    
+    .publication {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 0;
+      margin-top: 1.5rem;
+      margin-bottom: 3rem;
+      border: none;
+      box-shadow: none;
+      border-radius: 0;
+      background: none;
+      flex-wrap: wrap;
+    }
+    
+    
+    .publication-image {
+      width: 100%;
+      max-width: 360px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    
+    .publication-info {
+      flex: 1;
+      min-width: 0;
+    }
+    
+    .publication-title {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    
+    .publication-meta {
+      font-style: italic;
+      color: #555;
+      font-size: 0.95rem; 
+      margin-bottom: 0.5rem;
+    }
+    
+    .publication-abstract {
+      font-size: 0.875rem;
+      color: #333;
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+    }
+    
+    .publication-links a {
+      margin-right: 0.5rem;
+    }
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.125rem;
+  }
+
+  .item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .item img.logo {
+    margin: 0.5rem 0 0;
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .publication {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .publication-image {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .award-line {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    }
+
+   .award-left {
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #333;
+    }
+    .break-wrap {
+    display: block;
+    margin-top: 0.25rem;
+    color: #555;
+    font-weight: 400;
+    }
+
+  .award-right {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #777;
+    margin-top: 0.25rem;
+    margin-left: 0;
+    }
+
+  .header-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .avatar {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .contact {
+    font-size: 0.9rem;
+    word-break: break-word;
+  }
+}
+  .pub-extra {
+     display: none;
+  }
+  
+</style>
+
+
+<body>
+
+    <div class="header-container">
+    <img src="assets/avatar.png" alt="Zihan Su" class="avatar" />
+    <div style="font-family: 'Dancing Script', sans-serif; font-weight: 600; font-size: 30px; display: flex; justify-content: center; align-items: center; gap: 40px;">
+      <div>Zihan (Nick) Su</div>
+      <div style="font-size: 26px;">苏梓涵</div>
+    </div>
+        
+<div class="contact">
+    <i class="fas fa-map-marker-alt"></i> <a href="https://en.wikipedia.org/wiki/Nottingham" class="link">Nottingham</a>, UK |
+    <i class="fas fa-envelope"></i> <a href="mailto:smyzs4@nottingham.ac.uk" class="link">email</a> |
+    <i class="fas fa-graduation-cap"></i> <a href="https://scholar.google.com/citations?user=Qy0aZO8AAAAJ&hl=en" class="link">scholar</a> |
+    <i class="fab fa-github"></i> <a href="https://github.com/NickyoyoSu" class="link">github</a> |
+    <i class="fas fa-blog"></i> <a href="https://www.notion.so/Nick-2ff49790458f8060ad98d07a03f4372d?source=copy_link" class="link">blog</a>
+
+</div>
+
+    <div class="quote-minimal">
+        欢迎所有的讨论和潜在的合作。
+    </div>
+
+</div>
+
+    <div class="section">
+        <h2>Introduction</h2>
+
+      <p>👋 Nice to meet you! I am a final-year undergraduate student at The University of Nottingham. I am working with Ziheng Chen (University of Trento) and advised by Nicu Sebe. We are exploring hyperbolic-geometry foundation models. My interests include LLMs, AI Agents, and next-generation algorithmic frameworks.</p>
+
+<p>💬 欢迎所有的讨论和潜在的合作。</p>
+        
+  </div>
+
+    <div class="section">
+        <h2>Education</h2>
+
+        <div class="award-line">
+            <div class="award-left">
+                🎓 <span class="highlight">BSc in Statistics</span>
+                <span class="break-wrap">@ <span class="link">University of Nottingham</span></span>
+            </div>
+            <div class="award-right">2022 – 2026</div>
+        </div>
+
+
+    </div>
+
+    <div class="section">
+        <h2>Selected Publications</h2>
+
+        <div class="publication">
+            <img class="publication-image" src="assets/papers/pvnn.svg" alt="Proper Velocity Neural Network" />
+            <div class="publication-info">
+                <div class="publication-title">
+                    📄 Proper Velocity Neural Networks
+                </div>
+
+                <div class="publication-meta">
+                    ICLR 2026 —
+                    <span class="author-list-full">
+                        Ziheng Chen, Zihan Su, Bernhard Schölkopf, Nicu Sebe
+                    </span>
+                </div>
+
+                <div class="publication-abstract">
+                    <strong>Abstract:</strong> Hyperbolic neural networks (HNNs) have shown remarkable success in representing hierarchical and tree-like structures, yet most existing work relies on the Poincaré ball and hyperboloid models. While these models admit closed-form Riemannian operators, their constrained nature potentially leads to numerical instabilities, especially near model boundaries. In this work, we explore the Proper Velocity (PV) manifold, an unconstrained representation of hyperbolic space rooted in Einstein’s special relativity, as a stable alternative. We first establish the complete Riemannian toolkit of the PV space. Building on this foundation, we introduce Proper Velocity Neural Networks (PVNNs) with core layers including Multinomial Logistic Regression (MLR), Fully Connected (FC), convolutional, activation, and batch normalization layers. Extensive experiments across four domains, namely numerical stability, graph node classification, image classification, and genomic sequence learning, demonstrate the stability and effectiveness of PVNNs.
+                </div>
+                [<a class="link" href="https://openreview.net/forum?id=UDIYU1X3vC&referrer=%5Bthe%20profile%20of%20Zihan%20Su%5D(%2Fprofile%3Fid%3D~Zihan_Su5)">openreview</a>]
+            </div>
+        </div>
+
+        <div class="publication">
+            <img class="publication-image" src="assets/papers/credit-risk.svg" alt="Credit Risk Analysis" />
+            <div class="publication-info">
+                <div class="publication-title">
+                    📄 Transforming Credit Risk Analysis: A Time-Series-Driven ResE-BiLSTM Framework for Post-Loan Default Detection
+                </div>
+
+                <div class="publication-meta">
+                    Information (2026) —
+                    <span class="author-list-full">
+                        Yue Yang, Yuxiang Lin, Ying Zhang, Zihan Su, Chang Chuan Goh, Tangtangfang Fang, Anthony Bellotti, Boon Giin Lee
+                    </span>
+                </div>
+
+                <div class="publication-abstract">
+                    <strong>Abstract:</strong> We propose a time-series-driven ResE-BiLSTM framework for post-loan default detection, improving credit risk analysis by modeling temporal dynamics and enhancing classification robustness.
+                </div>
+                [<a class="link" href="https://www.mdpi.com/2078-2489/17/1/5">mdpi</a>]
+            </div>
+        </div>
+
+
+
+        <div class="section">
+            <h2>Research Experience</h2>
+            
+        <div class="award-line">
+            <div class="award-left">
+                🔬 <span class="highlight">Research Assistant</span>
+                <span class="break-wrap">@ <span class="link">Graph and Geometric Learning Lab, Yale University</span></span>
+            </div>
+            <div class="award-right">Apr 2025 – Aug 2025</div>
+        </div>
+        </div>
+
+
+
+
+        <!-- Industry Experience section removed until provided -->
+
+
+
+      <!--
+        <div class="section">
+            <h2>Awards & Scholarship</h2>            
+            <div class="award-line">
+                <div class="award-left">
+                    🎖️ <span class="highlight">Academic Scholarship C (Top 3%)</span>
+                </div>
+                <div class="award-right">
+                    School of Data Science, CUHK-SZ, 2024
+                </div>
+            </div>
+            
+            <div class="award-line">
+                <div class="award-left">
+                    🎖️ <span class="highlight">Undergraduate Research Award</span>
+                </div>
+                <div class="award-right">
+                    Research Award Committee, CUHK-SZ, 2024 
+                </div>
+            </div>
+
+            <div class="award-line">
+                <div class="award-left">
+                    🥈 <span class="highlight">Silver Medal (Top 2%)</span>
+                    <span class="break-wrap">@ <a class="link" href="https://www.kaggle.com/competitions/optiver-trading-at-the-close/leaderboard" target="_blank">Trading at the Close</a></span>
+                </div>
+                <div class="award-right">
+                    Kaggle Challenge, Optiver, 2023
+                </div>
+            </div>
+        </div>
+        -->
+
+
+
+        <footer style="text-align: center; font-size: 14px; color: #999; margin-top: 40px; padding-top: 20px;">
+            © 2026 Zihan (Nick) Su. Hosted by GitHub Pages.
+        </footer>
+</body>
+
+</html>

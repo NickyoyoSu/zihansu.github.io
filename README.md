@@ -1,2 +1,2 @@
 # zihansu.github.io
-Zihan Su's personal website
+Zihan (Nick) Su's personal website.
