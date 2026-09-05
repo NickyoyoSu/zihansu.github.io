@@ -40,7 +40,6 @@
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -159,9 +158,7 @@
       transform: translateY(-1px);
     }
 
-    .section {
-      margin-top: 38px;
-    }
+    .section { margin-top: 38px; }
 
     .section-heading {
       display: flex;
@@ -332,7 +329,7 @@
 
     .timeline-row {
       display: grid;
-      grid-template-columns: 150px 1fr;
+      grid-template-columns: 160px 1fr;
       gap: 20px;
       padding: 18px 22px;
     }
@@ -342,6 +339,7 @@
     .timeline-date {
       color: var(--muted);
       font-size: 0.86rem;
+      white-space: nowrap;
     }
 
     .timeline-main strong { display: block; }
@@ -441,15 +439,6 @@
         </article>
 
         <article class="card">
-          <h3>Geometric Representation Learning for VLMs</h3>
-          <ul>
-            <li>Compared Euclidean and Lorentzian representation / prediction heads across pretrained vision and vision-language models.</li>
-            <li>Built experiments with MLLama-11B-Vision, Janus-Pro-7B, CLIP, ViT, and ResNet using LoRA, learnable curvature, visual-token representations, and COCO 2017 pipelines.</li>
-            <li>Developed data and training pipelines and ran multi-day experiments on 4× NVIDIA A6000 GPUs.</li>
-          </ul>
-        </article>
-
-        <article class="card">
           <h3>PVgen: Structured Latents + Flow Matching</h3>
           <ul>
             <li>Developing a generative framework that encodes graphs and molecular structures into continuous Proper Velocity representations and hierarchical discrete tokens.</li>
@@ -457,15 +446,35 @@
             <li>Studying how non-Euclidean geometry and hierarchical tokenization can organize structured latent spaces for generative modeling.</li>
           </ul>
         </article>
+      </div>
+    </section>
 
-        <article class="card">
-          <h3>Umbilic Multinomial Logistic Regression</h3>
-          <ul>
-            <li>Developed a boundary-aware classifier family with learnable class centers and radii across hyperplane, spherical, signed-square, mixed, and prototype formulations.</li>
-            <li>Designed controlled low-shot and full-data experiments with ViT-B/16 and ConvNeXt-Tiny.</li>
-            <li>Classwise Mixed-H² improved in 17/18 matched settings; learned-radius UMLR²-S improved in all 12 matched low-shot comparisons.</li>
-          </ul>
-        </article>
+    <section class="section">
+      <div class="section-heading">
+        <h2>Research Experience</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-row">
+          <div class="timeline-date">Aug 2026–Present</div>
+          <div class="timeline-main">
+            <strong>Harvard University</strong>
+            <span>Action-conditioned video world models, causality-aware generation, and structured 4D world representations.</span>
+          </div>
+        </div>
+        <div class="timeline-row">
+          <div class="timeline-date">Jul 2025–Present</div>
+          <div class="timeline-main">
+            <strong>Research Collaboration</strong>
+            <span>With Ziheng Chen (University of Trento), Prof. Nicu Sebe, and Prof. Bernhard Schölkopf · structured representations, geometric deep learning, and generative modeling.</span>
+          </div>
+        </div>
+        <div class="timeline-row">
+          <div class="timeline-date">Dec 2024–Oct 2025</div>
+          <div class="timeline-main">
+            <strong>Yale University</strong>
+            <span>Geometric representation learning for pretrained vision and vision-language models with Prof. Rex Ying.</span>
+          </div>
+        </div>
       </div>
     </section>
 
