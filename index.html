@@ -13,8 +13,7 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+SC:wght@400&display=swap" rel="stylesheet" />
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-67XDYXYKQJ"></script>
   <script>
@@ -26,17 +25,14 @@
 
   <style>
     :root {
-      --bg: #f7f8fb;
-      --surface: #ffffff;
-      --text: #172033;
-      --muted: #61708a;
-      --line: #e5e9f0;
-      --accent: #244da8;
-      --accent-soft: #eef3ff;
-      --success: #1d7a54;
-      --success-soft: #edf8f3;
-      --shadow: 0 8px 28px rgba(23, 32, 51, 0.07);
-      --radius: 18px;
+      --bg: #f8f5ef;
+      --text: #1c1a16;
+      --body: #3a362e;
+      --muted: #6e6758;
+      --rule: #e2dccf;
+      --accent: #8a2d2d;
+      --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+      --serif: "Newsreader", Georgia, "Times New Roman", serif;
     }
 
     * { box-sizing: border-box; }
@@ -46,516 +42,422 @@
       margin: 0;
       background: var(--bg);
       color: var(--text);
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: var(--serif);
+      font-size: 18px;
       line-height: 1.65;
+      font-feature-settings: "liga", "kern";
+      -webkit-font-smoothing: antialiased;
     }
 
-    a { color: inherit; }
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid #d9b5b5; }
+    a:hover { border-bottom-color: var(--accent); }
 
     .page {
-      width: min(1080px, calc(100% - 32px));
+      width: min(1080px, calc(100% - 56px));
       margin: 0 auto;
-      padding: 36px 0 64px;
+      padding: 88px 0 96px;
     }
 
+    /* ---------- hero ---------- */
     .hero {
       display: grid;
-      grid-template-columns: 150px 1fr;
-      gap: 32px;
-      align-items: center;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 34px;
-      box-shadow: var(--shadow);
+      grid-template-columns: 1fr 180px;
+      gap: 64px;
+      align-items: start;
+      padding-bottom: 56px;
+      border-bottom: 1px solid var(--rule);
     }
 
     .avatar {
-      width: 136px;
-      height: 136px;
-      border-radius: 50%;
+      width: 180px;
+      height: 180px;
       object-fit: cover;
-      border: 4px solid #fff;
-      box-shadow: 0 0 0 1px var(--line), 0 8px 24px rgba(23, 32, 51, 0.12);
+      border-radius: 4px;
+      filter: saturate(.92);
     }
 
     .eyebrow {
-      margin: 0 0 6px;
-      color: var(--accent);
-      font-weight: 700;
-      font-size: 0.82rem;
-      letter-spacing: 0.08em;
+      margin: 0 0 18px;
+      font-family: var(--mono);
+      font-size: .74rem;
+      letter-spacing: .14em;
       text-transform: uppercase;
+      color: var(--muted);
     }
 
     h1 {
       margin: 0;
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: clamp(2.2rem, 5vw, 3.25rem);
-      line-height: 1.05;
+      font-weight: 500;
+      font-size: clamp(2.6rem, 5vw, 3.6rem);
+      line-height: 1.02;
+      letter-spacing: -.015em;
     }
 
     .cn-name {
-      font-family: "Noto Sans SC", sans-serif;
-      font-size: 1.15rem;
-      font-weight: 600;
+      display: block;
+      margin-top: 10px;
+      font-family: "Noto Serif SC", var(--serif);
+      font-size: 1.3rem;
+      font-weight: 400;
       color: var(--muted);
-      margin-top: 4px;
+      letter-spacing: .06em;
     }
 
     .hero-subtitle {
-      margin: 16px 0 0;
-      max-width: 760px;
-      color: #33415c;
-      font-size: 1.03rem;
+      margin: 26px 0 0;
+      font-size: 1.22rem;
+      line-height: 1.5;
+      color: var(--body);
+      max-width: 640px;
     }
 
     .status {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      margin-top: 16px;
-      padding: 7px 11px;
-      border-radius: 999px;
-      background: var(--success-soft);
-      color: var(--success);
-      font-size: 0.86rem;
-      font-weight: 600;
+      gap: 10px;
+      margin: 24px 0 0;
+      font-family: var(--mono);
+      font-size: .76rem;
+      letter-spacing: .04em;
+      color: var(--accent);
     }
 
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--success);
-    }
+    .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
 
     .links {
       display: flex;
       flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 18px;
+      gap: 6px 28px;
+      margin-top: 26px;
+      font-family: var(--mono);
+      font-size: .8rem;
+      letter-spacing: .03em;
     }
 
-    .link-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 8px 11px;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      text-decoration: none;
-      background: #fff;
-      color: #33415c;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: 0.18s ease;
+    .links a { color: var(--text); border-bottom: 1px solid var(--rule); padding-bottom: 1px; }
+    .links a:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* ---------- sections ---------- */
+    .section {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 40px;
+      padding: 56px 0;
+      border-bottom: 1px solid var(--rule);
     }
 
-    .link-pill:hover {
-      border-color: #c8d4ee;
-      color: var(--accent);
-      transform: translateY(-1px);
-    }
+    .section:last-of-type { border-bottom: 0; }
 
-    .section { margin-top: 38px; }
-
-    .section-heading {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 15px;
-    }
-
-    h2 {
+    .section-label h2 {
       margin: 0;
-      font-size: 1.35rem;
-      letter-spacing: -0.02em;
+      font-family: var(--mono);
+      font-weight: 500;
+      font-size: .76rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-top: 8px;
     }
 
     .section-note {
+      display: inline-block;
+      margin-top: 12px;
+      font-family: var(--mono);
+      font-size: .72rem;
       color: var(--muted);
-      font-size: 0.85rem;
+      border: 0;
     }
+    .section-note:hover { color: var(--accent); }
 
-    .intro-card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 24px;
-    }
-
-    .intro-card p {
+    .lead {
       margin: 0;
-      color: #33415c;
+      font-size: 1.3rem;
+      line-height: 1.5;
+      max-width: 760px;
     }
 
-    .intro-card p + p { margin-top: 12px; }
+    .lead + p { margin: 16px 0 0; color: var(--body); max-width: 760px; }
 
     .tags {
+      list-style: none;
+      padding: 0;
+      margin: 26px 0 0;
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 17px;
+      gap: 10px 22px;
+      font-family: var(--mono);
+      font-size: .74rem;
+      color: var(--muted);
     }
 
-    .tag {
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent);
-      font-size: 0.82rem;
-      font-weight: 600;
-    }
+    .tags li::before { content: "·"; margin-right: 10px; color: var(--accent); }
 
-    .grid {
+    /* news */
+    .news { list-style: none; margin: 0; padding: 0; }
+    .news li {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
+      grid-template-columns: 110px 1fr;
+      gap: 24px;
+      padding: 14px 0;
+      border-top: 1px dotted var(--rule);
     }
+    .news li:first-child { border-top: 0; padding-top: 6px; }
+    .news time { font-family: var(--mono); font-size: .74rem; color: var(--muted); padding-top: 6px; }
+    .news em { font-style: italic; color: var(--accent); }
 
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 22px;
-      min-width: 0;
-    }
+    /* publications */
+    .pubs { list-style: none; margin: 0; padding: 0; }
 
-    .card h3 {
-      margin: 0;
-      font-size: 1.05rem;
-      line-height: 1.35;
-    }
-
-    .card p {
-      color: #40506b;
-      margin: 12px 0 0;
-      font-size: 0.93rem;
-    }
-
-    .card ul {
-      margin: 12px 0 0;
-      padding-left: 19px;
-      color: #40506b;
-      font-size: 0.92rem;
-    }
-
-    .card li + li { margin-top: 7px; }
-
-    .publication-featured {
+    .pub {
       display: grid;
-      grid-template-columns: 240px 1fr;
+      grid-template-columns: 1fr 240px;
+      grid-template-areas: "meta meta" "main img";
+      gap: 8px 40px;
+      padding: 30px 0;
+      border-top: 1px dotted var(--rule);
+    }
+    .pub:first-child { border-top: 0; padding-top: 6px; }
+    .pub.no-image { grid-template-columns: 1fr; grid-template-areas: "meta" "main"; }
+
+    .pub-meta {
+      grid-area: meta;
+      display: flex;
+      gap: 18px;
+      align-items: baseline;
+      font-family: var(--mono);
+      font-size: .72rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .venue-top { color: var(--accent); font-weight: 500; }
+
+    .pub-main { grid-area: main; min-width: 0; }
+    .pub h3 { margin: 0; font-size: 1.45rem; font-weight: 500; line-height: 1.25; letter-spacing: -.01em; }
+    .authors { margin: 8px 0 0; font-size: 1rem; color: #4a453b; }
+    .authors u { text-decoration: none; color: var(--text); border-bottom: 1px solid var(--rule); }
+    .abstract { margin: 12px 0 0; font-size: 1.02rem; color: var(--body); max-width: 640px; }
+
+    .pub-links {
+      margin: 14px 0 0;
+      display: flex;
       gap: 22px;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 20px;
+      font-family: var(--mono);
+      font-size: .74rem;
+      letter-spacing: .04em;
     }
+    .pub-links .soon { color: var(--muted); }
 
-    .publication-image {
+    .pub-image {
+      grid-area: img;
       width: 100%;
-      border-radius: 12px;
-      border: 1px solid var(--line);
-      object-fit: cover;
+      border-radius: 3px;
+      border: 1px solid var(--rule);
+      mix-blend-mode: multiply;
+      align-self: start;
     }
 
-    .pub-venue {
-      color: var(--accent);
-      font-size: 0.82rem;
-      font-weight: 700;
-      margin-bottom: 5px;
-    }
+    .pub-compact { padding: 20px 0; }
+    .pub-compact h3 { font-size: 1.1rem; }
+    .pub-compact .authors { font-size: .92rem; }
 
-    .pub-title {
-      margin: 0;
-      font-size: 1.08rem;
-      line-height: 1.35;
-    }
+    /* current work */
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+    .card h3 { margin: 0 0 12px; font-size: 1.3rem; font-weight: 500; line-height: 1.3; }
+    .card ul { margin: 0; padding-left: 18px; color: var(--body); }
+    .card li + li { margin-top: 8px; }
+    .card p { margin: 0; color: var(--body); max-width: 760px; }
 
-    .pub-authors {
-      color: var(--muted);
-      font-size: 0.86rem;
-      margin-top: 7px;
-    }
-
-    .pub-summary {
-      color: #40506b;
-      font-size: 0.92rem;
-      margin-top: 12px;
-    }
-
-    .pub-link {
-      display: inline-flex;
-      margin-top: 12px;
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.88rem;
-    }
-
-    .pub-list {
-      margin-top: 14px;
+    /* timeline */
+    .timeline { list-style: none; margin: 0; padding: 0; }
+    .timeline li {
       display: grid;
-      gap: 10px;
+      grid-template-columns: 180px 1fr;
+      gap: 24px;
+      padding: 16px 0;
+      border-top: 1px dotted var(--rule);
     }
-
-    .pub-row {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 13px;
-      padding: 14px 16px;
-    }
-
-    .pub-row strong {
-      display: block;
-      font-size: 0.93rem;
-    }
-
-    .pub-row span {
-      display: block;
-      color: var(--muted);
-      font-size: 0.82rem;
-      margin-top: 3px;
-    }
-
-    .timeline {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-
-    .timeline-row {
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 20px;
-      padding: 18px 22px;
-    }
-
-    .timeline-row + .timeline-row { border-top: 1px solid var(--line); }
-
-    .timeline-date {
-      color: var(--muted);
-      font-size: 0.86rem;
-      white-space: nowrap;
-    }
-
-    .timeline-main strong { display: block; }
-
-    .timeline-main span {
-      display: block;
-      margin-top: 3px;
-      color: var(--muted);
-      font-size: 0.87rem;
-    }
+    .timeline li:first-child { border-top: 0; padding-top: 6px; }
+    .timeline time { font-family: var(--mono); font-size: .74rem; color: var(--muted); padding-top: 7px; }
+    .timeline strong { display: block; font-weight: 500; font-size: 1.12rem; }
+    .timeline span { display: block; margin-top: 3px; color: #4a453b; }
 
     footer {
-      margin-top: 46px;
-      padding-top: 20px;
-      border-top: 1px solid var(--line);
+      padding-top: 36px;
+      border-top: 1px solid var(--rule);
+      font-family: var(--mono);
+      font-size: .72rem;
+      letter-spacing: .04em;
       color: var(--muted);
-      font-size: 0.82rem;
       text-align: center;
     }
 
-    @media (max-width: 760px) {
-      .page { width: min(100% - 22px, 1080px); padding-top: 18px; }
-      .hero { grid-template-columns: 1fr; text-align: center; padding: 26px 20px; }
-      .avatar { margin: 0 auto; width: 112px; height: 112px; }
-      .hero-subtitle { margin-left: auto; margin-right: auto; }
-      .status { justify-content: center; }
-      .links { justify-content: center; }
-      .grid { grid-template-columns: 1fr; }
-      .publication-featured { grid-template-columns: 1fr; }
-      .publication-image { max-width: 420px; }
-      .timeline-row { grid-template-columns: 1fr; gap: 5px; }
-      .section-heading { align-items: flex-start; flex-direction: column; gap: 4px; }
+    @media (max-width: 820px) {
+      .page { width: min(100% - 40px, 1080px); padding-top: 48px; }
+      .hero { grid-template-columns: 1fr; gap: 26px; }
+      .avatar { order: -1; width: 120px; height: 120px; }
+      .section { grid-template-columns: 1fr; gap: 16px; padding: 40px 0; }
+      .pub { grid-template-columns: 1fr; grid-template-areas: "meta" "main" "img"; }
+      .pub-image { max-width: 340px; }
+      .grid { grid-template-columns: 1fr; gap: 32px; }
+      .news li, .timeline li { grid-template-columns: 1fr; gap: 2px; }
     }
   </style>
 </head>
 
 <body>
   <main class="page">
-    <section class="hero">
-      <img src="assets/avatar.png" alt="Portrait of Zihan Su" class="avatar" />
+    <header class="hero">
       <div>
-        <p class="eyebrow">Machine Learning Researcher</p>
-        <h1>Zihan (Nick) Su</h1>
-        <div class="cn-name">苏梓涵</div>
+        <p class="eyebrow">Machine Learning Researcher · Harvard University</p>
+        <h1>Zihan (Nick) Su <span class="cn-name">苏梓涵</span></h1>
         <p class="hero-subtitle">
-          S.M. student in Data Science at Harvard University working on multimodal foundation models,
-          video world models, structured representation learning, and generative modeling.
+          S.M. student in Data Science at Harvard. I work on multimodal foundation models,
+          video world models, and structured generative modeling.
         </p>
-        <div class="status"><span class="status-dot"></span> Open to Summer 2027 research / ML internships</div>
-        <div class="links">
-          <a class="link-pill" href="mailto:zihansu@fas.harvard.edu"><i class="fas fa-envelope"></i> Email</a>
-          <a class="link-pill" href="https://scholar.google.com/citations?user=Qy0aZO8AAAAJ&hl=en" target="_blank" rel="noopener noreferrer"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
-          <a class="link-pill" href="https://github.com/NickyoyoSu" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
-          <a class="link-pill" href="https://www.notion.so/Nick-2ff49790458f8060ad98d07a03f4372d?source=copy_link" target="_blank" rel="noopener noreferrer"><i class="fas fa-pen-nib"></i> Blog</a>
-        </div>
+        <p class="status"><span class="status-dot"></span>Open to Summer 2027 research / ML internships</p>
+        <nav class="links" aria-label="Profile links">
+          <a href="mailto:zihansu@fas.harvard.edu">Email</a>
+          <a href="https://scholar.google.com/citations?user=Qy0aZO8AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+          <a href="https://github.com/NickyoyoSu" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.notion.so/Nick-2ff49790458f8060ad98d07a03f4372d?source=copy_link" target="_blank" rel="noopener noreferrer">Blog</a>
+        </nav>
+      </div>
+      <img src="assets/avatar.png" alt="Portrait of Zihan Su" class="avatar" />
+    </header>
+
+    <section class="section" id="news">
+      <div class="section-label"><h2>News</h2></div>
+      <ul class="news">
+        <li><time>Sep 2026</time><span><strong>Umbilic Multinomial Logistic Regression</strong> accepted to <em>NeurIPS 2026</em>. First author.</span></li>
+        <li><time>Aug 2026</time><span>Started at Harvard. Joined Prof. Yilun Du's group to work on video world models.</span></li>
+        <li><time>Jan 2026</time><span><strong>Proper Velocity Neural Networks</strong> accepted to <em>ICLR 2026</em>. Co-first author.</span></li>
+        <li><time>Jul 2025</time><span>Began collaborating with the University of Trento on geometric deep learning.</span></li>
+      </ul>
+    </section>
+
+    <section class="section" id="research">
+      <div class="section-label"><h2>Research</h2></div>
+      <div>
+        <p class="lead">
+          I study how structured representations can make multimodal and generative models
+          more capable, from non-Euclidean geometry to action-conditioned video generation.
+        </p>
+        <p>
+          Recent work covers Flow Matching, hierarchical tokenization, pretrained VLM adaptation,
+          and world models for robot planning.
+        </p>
+        <ul class="tags">
+          <li>Multimodal Foundation Models</li>
+          <li>Video World Models</li>
+          <li>Flow Matching</li>
+          <li>Geometric Deep Learning</li>
+          <li>Structured Representations</li>
+          <li>Spatial / Embodied AI</li>
+        </ul>
       </div>
     </section>
 
-    <section class="section">
-      <div class="section-heading">
-        <h2>Research Profile</h2>
+    <section class="section" id="publications">
+      <div class="section-label">
+        <h2>Publications</h2>
+        <a class="section-note" href="https://scholar.google.com/citations?user=Qy0aZO8AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
       </div>
-      <div class="intro-card">
-        <p>
-          My research focuses on how structured representations can improve multimodal and generative models.
-          I have worked on pretrained VLM adaptation, visual-token modeling, hierarchical tokenization,
-          Flow Matching, geometric deep learning, and action-conditioned video generation for robot planning.
-        </p>
-        <p>
-          I am particularly interested in multimodal foundation models, video/world models, spatial intelligence,
-          physical AI, and structured generative modeling.
-        </p>
-        <div class="tags">
-          <span class="tag">Multimodal Foundation Models</span>
-          <span class="tag">Video World Models</span>
-          <span class="tag">Vision-Language Models</span>
-          <span class="tag">Flow Matching</span>
-          <span class="tag">Structured Representations</span>
-          <span class="tag">Spatial / Embodied AI</span>
-        </div>
-      </div>
+      <ol class="pubs">
+        <li class="pub no-image">
+          <div class="pub-meta"><span class="venue-top">NeurIPS 2026</span><span>First author</span></div>
+          <div class="pub-main">
+            <h3>Umbilic Multinomial Logistic Regression</h3>
+            <p class="authors"><u>Zihan Su</u>, Nicu Sebe, Bernhard Schölkopf, Ziheng Chen</p>
+            <p class="abstract">Extends multinomial logistic regression to umbilic Riemannian geometries, giving one classifier for non-Euclidean representation learning.</p>
+            <p class="pub-links"><span class="soon">Paper and code coming soon</span></p>
+          </div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-meta"><span class="venue-top">ICLR 2026</span><span>Co-first author</span></div>
+          <div class="pub-main">
+            <h3>Proper Velocity Neural Networks</h3>
+            <p class="authors">Ziheng Chen*, <u>Zihan Su</u>*, Bernhard Schölkopf, Nicu Sebe &nbsp;·&nbsp; *equal contribution</p>
+            <p class="abstract">A full neural-network framework for the unconstrained Proper Velocity model. Best MCC on all five TEB benchmarks, with an 8.3-point gain over HCNN-S on SINEs.</p>
+            <p class="pub-links">
+              <a href="https://openreview.net/forum?id=UDIYU1X3vC" target="_blank" rel="noopener noreferrer">OpenReview</a>
+              <a href="https://github.com/NickyoyoSu/PVNN" target="_blank" rel="noopener noreferrer">Code</a>
+              <a href="https://github.com/NickyoyoSu/PVNN/blob/main/ICLR26-PVNN-Poster.pdf" target="_blank" rel="noopener noreferrer">Poster</a>
+            </p>
+          </div>
+          <img class="pub-image" src="assets/papers/pvnn.png" alt="Proper Velocity Neural Networks figure" />
+        </li>
+
+        <li class="pub no-image pub-compact">
+          <div class="pub-meta"><span>Applied Soft Computing · 2026</span></div>
+          <div class="pub-main">
+            <h3>Kolmogorov–Arnold Networks-based GRU and LSTM for Loan Default Early Prediction</h3>
+            <p class="authors">Yue Yang, <u>Zihan Su</u>, Yaqi Zhang, Chui Cheng Goh, Yuan Lin, Anthony G. Bellotti, Boon Giin Lee</p>
+          </div>
+        </li>
+
+        <li class="pub no-image pub-compact">
+          <div class="pub-meta"><span>Information 17(1), 5 · 2026</span></div>
+          <div class="pub-main">
+            <h3>Transforming Credit Risk Analysis: A Time-Series-Driven ResE-BiLSTM Framework for Post-Loan Default Detection</h3>
+            <p class="authors">Yue Yang, Yuan Lin, Yaqi Zhang, <u>Zihan Su</u>, Chui Cheng Goh, Tianyi Fang, Anthony Bellotti, Boon Giin Lee</p>
+          </div>
+        </li>
+      </ol>
     </section>
 
-    <section class="section">
-      <div class="section-heading">
-        <h2>Current & Selected Research</h2>
-      </div>
+    <section class="section" id="current">
+      <div class="section-label"><h2>Current Work</h2></div>
       <div class="grid">
         <article class="card">
           <h3>Action-Conditioned Video World Models</h3>
           <ul>
-            <li>Investigating causality-aware patch denoising where spatial regions follow schedules derived from robot–object interaction dependencies.</li>
-            <li>Designing controlled ablations across parallel, random, reverse-order, causality-aware, and difficulty-aware generation strategies.</li>
-            <li>Studying extensions from RGB-only generation toward structured 4D representations combining RGB, optical flow, ray-based geometry, and robot actions on RLBench and RoboTwin.</li>
+            <li>Causality-aware patch denoising driven by robot–object interaction dependencies.</li>
+            <li>Ablations over parallel, random, reverse, causality-aware, and difficulty-aware generation.</li>
+            <li>From RGB toward 4D representations with optical flow, ray geometry, and actions, on RLBench and RoboTwin.</li>
           </ul>
         </article>
-
         <article class="card">
           <h3>PVgen: Structured Latents + Flow Matching</h3>
           <ul>
-            <li>Developing a generative framework that encodes graphs and molecular structures into continuous Proper Velocity representations and hierarchical discrete tokens.</li>
-            <li>Building Flow Matching priors over latent and token representations to transform noise into structured graph states.</li>
-            <li>Studying how non-Euclidean geometry and hierarchical tokenization can organize structured latent spaces for generative modeling.</li>
+            <li>Encoding graphs and molecules into Proper Velocity latents and hierarchical discrete tokens.</li>
+            <li>Flow Matching priors that turn noise into structured graph states.</li>
+            <li>Using non-Euclidean geometry to organize latent spaces for generation.</li>
           </ul>
         </article>
       </div>
     </section>
 
-    <section class="section">
-      <div class="section-heading">
-        <h2>Research Experience</h2>
-      </div>
-      <div class="timeline">
-        <div class="timeline-row">
-          <div class="timeline-date">Aug 2026–Present</div>
-          <div class="timeline-main">
-            <strong>Harvard University</strong>
-            <span>With Prof. Yilun Du and Dr. Ruojin Cai · action-conditioned video world models, causality-aware generation, and structured 4D world representations.</span>
-          </div>
-        </div>
-        <div class="timeline-row">
-          <div class="timeline-date">Jul 2025–Present</div>
-          <div class="timeline-main">
-            <strong>University of Trento</strong>
-            <span>With Ziheng Chen, Prof. Nicu Sebe, and Prof. Bernhard Schölkopf · structured representations, geometric deep learning, and generative modeling.</span>
-          </div>
-        </div>
-        <div class="timeline-row">
-          <div class="timeline-date">Dec 2024–Oct 2025</div>
-          <div class="timeline-main">
-            <strong>Yale University</strong>
-            <span>Geometric representation learning for pretrained vision and vision-language models with Prof. Rex Ying.</span>
-          </div>
-        </div>
-      </div>
+    <section class="section" id="experience">
+      <div class="section-label"><h2>Experience</h2></div>
+      <ul class="timeline">
+        <li><time>Aug 2026 – Present</time><div><strong>Harvard University</strong><span>With Prof. Yilun Du and Dr. Ruojin Cai · video world models and structured 4D representations.</span></div></li>
+        <li><time>Jul 2025 – Present</time><div><strong>University of Trento</strong><span>With Ziheng Chen, Prof. Nicu Sebe, and Prof. Bernhard Schölkopf · geometric deep learning and generative modeling.</span></div></li>
+        <li><time>Dec 2024 – Oct 2025</time><div><strong>Yale University</strong><span>With Prof. Rex Ying · geometric representation learning for pretrained vision and vision-language models.</span></div></li>
+      </ul>
     </section>
 
-    <section class="section">
-      <div class="section-heading">
-        <h2>Selected Publications</h2>
-        <a class="section-note" href="https://scholar.google.com/citations?user=Qy0aZO8AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Full list on Google Scholar ↗</a>
-      </div>
-
-      <article class="publication-featured">
-        <img class="publication-image" src="assets/papers/pvnn.png" alt="Proper Velocity Neural Networks paper figure" />
-        <div>
-          <div class="pub-venue">ICLR 2026 · Accepted · Co-first Author</div>
-          <h3 class="pub-title">Proper Velocity Neural Networks</h3>
-          <div class="pub-authors">Ziheng Chen*, Zihan Su*, Bernhard Schölkopf, Nicu Sebe · *Equal contribution</div>
-          <p class="pub-summary">
-            Established a systematic neural-network framework for the unconstrained Proper Velocity model,
-            deriving geometric operators and implementing classification, fully connected, convolutional,
-            activation, and normalization modules in PyTorch. The framework achieved the best MCC on all five
-            TEB benchmarks, including an 8.3-point gain over HCNN-S on SINEs.
-          </p>
-          <a class="pub-link" href="https://openreview.net/forum?id=UDIYU1X3vC" target="_blank" rel="noopener noreferrer">OpenReview ↗</a>
-        </div>
-      </article>
-
-      <div class="pub-list">
-        <div class="pub-row">
-          <strong>Umbilic Multinomial Logistic Regression</strong>
-          <span>NeurIPS 2026 · under review · First author</span>
-        </div>
-        <div class="pub-row">
-          <strong>Kolmogorov-Arnold Networks-based GRU and LSTM for Loan Default Early Prediction</strong>
-          <span>Applied Soft Computing · 2026</span>
-        </div>
-        <div class="pub-row">
-          <strong>Transforming Credit Risk Analysis: A Time-Series-Driven ResE-BiLSTM Framework for Post-Loan Default Detection</strong>
-          <span>Information 17(1), 5 · 2026</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-heading">
-        <h2>Selected Project</h2>
-      </div>
+    <section class="section" id="project">
+      <div class="section-label"><h2>Project</h2></div>
       <article class="card">
         <h3>DeerMe.AI — Camera-Based AI Physical Coaching</h3>
         <p>
-          Co-founded and technically led a mobile physical-coaching prototype that combines human-keypoint analysis,
-          joint-angle and temporal features, confidence gating, finite-state motion tracking, real-time feedback,
-          and personalized exercise workflows. The system uses React Native / TypeScript on the client and Python
-          services for image, video, and real-time frame analysis, with 39 automated tests covering posture rules,
-          repetition counting, media upload, and state persistence.
+          Co-founded and led the technical side of a mobile coaching app that reads human keypoints
+          to give real-time form feedback. React Native client, Python vision services, 39 automated tests.
         </p>
       </article>
     </section>
 
-    <section class="section">
-      <div class="section-heading">
-        <h2>Education</h2>
-      </div>
-      <div class="timeline">
-        <div class="timeline-row">
-          <div class="timeline-date">2026–2028</div>
-          <div class="timeline-main">
-            <strong>S.M. in Data Science · Harvard University</strong>
-            <span>Cambridge, Massachusetts</span>
-          </div>
-        </div>
-        <div class="timeline-row">
-          <div class="timeline-date">2022–2026</div>
-          <div class="timeline-main">
-            <strong>B.Sc. (Hons) in Statistics · University of Nottingham</strong>
-            <span>United Kingdom</span>
-          </div>
-        </div>
-      </div>
+    <section class="section" id="education">
+      <div class="section-label"><h2>Education</h2></div>
+      <ul class="timeline">
+        <li><time>2026 – 2028</time><div><strong>Harvard University</strong><span>S.M. in Data Science · Cambridge, MA</span></div></li>
+        <li><time>2022 – 2026</time><div><strong>University of Nottingham</strong><span>B.Sc. (Hons) in Statistics · United Kingdom</span></div></li>
+      </ul>
     </section>
 
-    <footer>
-      © 2026 Zihan (Nick) Su · To be awake is to be alive.
-    </footer>
+    <footer>© 2026 Zihan (Nick) Su · To be awake is to be alive.</footer>
   </main>
 </body>
 </html>
