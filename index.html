@@ -226,7 +226,6 @@
       color: var(--muted);
     }
     .venue-top { color: var(--accent); font-weight: 500; }
-    .pub-compact .pub-meta { color: var(--gold); }
 
     .pub-main { grid-area: main; min-width: 0; }
     .pub h3 { margin: 0; font-size: 1.45rem; font-weight: 500; line-height: 1.25; letter-spacing: -.01em; }
@@ -255,26 +254,6 @@
 
     .pub-compact { padding: 12px 0; }
 
-    .pub-more { display: block; padding: 10px 0 0; }
-    .pub-more summary {
-      cursor: pointer;
-      list-style: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--mono);
-      font-size: .76rem;
-      letter-spacing: .04em;
-      color: var(--accent);
-      border-bottom: 1px solid #d9b5b5;
-      padding-bottom: 1px;
-    }
-    .pub-more summary::-webkit-details-marker { display: none; }
-    .pub-more summary::before { content: "+"; font-weight: 500; }
-    .pub-more details[open] summary::before { content: "\2212"; }
-    .pub-more summary .count { color: var(--muted); }
-    .pub-more summary:hover { border-bottom-color: var(--accent); }
-    .pub-more details[open] summary { margin-bottom: 4px; }
     .pub-compact h3 { font-size: 1.1rem; }
     .pub-compact .authors { font-size: .92rem; }
     .pub-compact .abstract { font-size: .95rem; }
@@ -400,38 +379,6 @@
           </div>
         </li>
 
-        <li class="pub-more">
-          <details>
-            <summary>More publications <span class="count">· 2 journal papers</span></summary>
-            <ol class="pubs">
-        <li class="pub no-image pub-compact">
-              <div class="pub-meta"><span>Applied Soft Computing · 2026</span></div>
-              <div class="pub-main">
-                <h3>Kolmogorov–Arnold Networks-based GRU and LSTM for Loan Default Early Prediction</h3>
-                <p class="authors">Yue Yang, <u>Zihan Su</u>, Ying Zhang, Chang Chuan Goh, Yuxiang Lin, Anthony Graham Bellotti, Boon Giin Lee</p>
-                <p class="abstract">GRU-KAN and LSTM-KAN combine Kolmogorov–Arnold Networks with recurrent models to flag loan defaults months ahead. Over 92% accuracy three months in advance and 88% eight months in advance, including on out-of-time data.</p>
-                <p class="pub-links">
-                  <a href="https://www.sciencedirect.com/science/article/pii/S1568494626006617" target="_blank" rel="noopener noreferrer">Paper</a>
-                  <a href="https://arxiv.org/abs/2507.13685" target="_blank" rel="noopener noreferrer">arXiv</a>
-            </p>
-              </div>
-            </li>
-
-            <li class="pub no-image pub-compact">
-              <div class="pub-meta"><span>Information 17(1), 5 · 2026</span></div>
-              <div class="pub-main">
-                <h3>Transforming Credit Risk Analysis: A Time-Series-Driven ResE-BiLSTM Framework for Post-Loan Default Detection</h3>
-                <p class="authors">Yue Yang, Yuxiang Lin, Ying Zhang, <u>Zihan Su</u>, Chang Chuan Goh, Tangtangfang Fang, Anthony Bellotti, Boon Giin Lee</p>
-                <p class="abstract">A residual-enhanced encoder BiLSTM that models repayment behavior over time to detect post-loan defaults. Evaluated on 44 cohorts of the Freddie Mac loan-level dataset, with average F1 of 0.92 and AUC of 0.97 against five recurrent and convolutional baselines.</p>
-                <p class="pub-links">
-                  <a href="https://www.mdpi.com/2078-2489/17/1/5" target="_blank" rel="noopener noreferrer">Paper</a>
-                  <a href="https://arxiv.org/abs/2508.00415" target="_blank" rel="noopener noreferrer">arXiv</a>
-            </p>
-              </div>
-            </li>
-            </ol>
-          </details>
-        </li>
       </ol>
     </section>
 
